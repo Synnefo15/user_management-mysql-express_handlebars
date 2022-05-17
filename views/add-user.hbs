@@ -1,0 +1,92 @@
+<nav aria-label='breadcrumb'>
+	<ol class='breadcrumb'>
+		<li class='breadcrumb-item'><a href='/'>Home</a></li>
+		<li class='breadcrumb-item active' aria-current='page'>New User</li>
+	</ol>
+</nav>
+
+{{! * Dismiss alert }}
+{{#if alert}}
+	<div class='alert alert-success alert-dismissible fade show' role='alert'>
+		<strong>Berhasil!</strong>
+		{{alert}}
+		<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+	</div>
+{{/if}}
+
+<form action='/adduser' class='row g-3 need-validation' method='post' novalidate>
+	<div class='col-lg-6'>
+		<div class='form-floating mb-3'>
+			<input
+				type='text'
+				class='form-control'
+				id='floatingInput'
+				placeholder='Isikan nama awal anda...'
+				name='first_name'
+			/>
+			<label for='floatingInput'>First Name</label>
+		</div>
+
+	</div>
+	<div class='col-lg-6'>
+		<div class='form-floating mb-3'>
+			<input
+				type='text'
+				class='form-control'
+				id='floatingInput'
+				placeholder='Isikan nama akhir anda...'
+				name='last_name'
+			/>
+			<label for='floatingInput'>Last Name</label>
+		</div>
+
+	</div>
+	<div class='col-lg-6'>
+		<div class='form-floating mb-3'>
+			<input
+				type='number'
+				class='form-control'
+				id='floatingInput'
+				placeholder='Isikan phone anda...'
+				name='phone'
+			/>
+			<label for='floatingInput'>Phone Name</label>
+		</div>
+
+	</div>
+	<div class='col-lg-6'>
+		<div class='form-floating mb-3'>
+			<input
+				type='email'
+				class='form-control'
+				id='floatingInput'
+				placeholder='Isikan email anda...'
+				name='email'
+			/>
+			<label for='floatingInput'>Email Name</label>
+		</div>
+
+	</div>
+	<div class='col-lg-12'>
+		<div class='form-floating mb-3'>
+			<textarea
+				type='text'
+				class='form-control'
+				id='floatingInput'
+				placeholder='Isikan comments anda...'
+				name='comment'
+				style='height: 200px'
+			>
+            {{this.comment}}
+			</textarea>
+			<label for='floatingInput'>comments</label>
+		</div>
+
+	</div>
+	<div class='col-lg-12 d-grid'>
+		<button class='btn btn-success' type='submit'>
+			Submit
+		</button>
+	</div>
+
+</form>
